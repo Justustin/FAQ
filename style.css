@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Lato&family=Open+Sans:wght@300;400&family=Roboto:wght@300;400&family=Staatliches&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'dosis' , sans-serif;
+  background-color: #f0f0f0;
+}
+h1{
+  text-align: center;
+  margin: 50px 0 30px;
+}
+.container{
+  width: 600px;
+  margin: 0 auto;
+}
+.faq{
+  display: grid;
+  grid-template-areas: 
+  'title title button'
+  'p p p';
+  border: 1px solid #9fa4a8;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  height: 130px;
+  transition: height 0.3s ease;
+}
+.faq p{
+  visibility: hidden;
+  grid-area: p;
+  transition: visibility 0.15s ease-out;
+}
+.faq.title{
+  grid-area: title;
+}
+.faq button{
+  grid-area: button;
+}
+.faq.active{
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  height: 200px;
+}
+.faq.active p{
+  visibility: visible;
+  transition: visibility 0.25s ease-in;
+}
+.faq.active::before,.faq.active::after{
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  font-size: 13rem;
+  color: #b3d89c;
+  position: absolute;
+  top: -30px;
+  left: -10px;
+  opacity: 0.25;
+  z-index: -1;
+}
+.faq.active::before{
+  transform: rotateY(180deg);
+  color: #a4def9;
+  top: 60px;
+  left: 30px;
+}
+button{
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  right: 20px;
+  top: 20px;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.fa-chevron-down{
+  display: block;
+}
+.fa-times{
+  display: none;
+}
+.fa-times.toggle{
+  display: block;
+ }
+.fa-chevron-down.toggle{
+  display: none; 
+ }
+i{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}

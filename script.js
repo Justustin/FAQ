@@ -1,0 +1,9 @@
+$("button").click(function(){
+  if($(this).parent().hasClass('active')){
+    $(this).parent().removeClass('active')
+    $(this).contents().removeClass('toggle')
+  }else{
+    $(this).parent().addClass('active')
+    $(this).contents().addClass('toggle')
+  }
+})
